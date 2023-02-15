@@ -1,0 +1,13 @@
+/*https://coolors.co/000000-20fc8f-aaa694-3f51b5-e71d36*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.bg-black{
+  background-color: #000000;
+}
+
+.bg-height{
+  height: 100vh;
+}

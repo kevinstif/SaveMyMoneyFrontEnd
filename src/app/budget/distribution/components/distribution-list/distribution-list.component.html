@@ -1,0 +1,26 @@
+<div class="row m-4">
+  <div class="col-md-6">
+    <div class="m-2 flex-container flex-center">
+      <h4 class="d-inline font-light mt-3">Distribution List</h4>
+      <button mat-icon-button routerLink="/distributions/add">
+        <mat-icon class="font-light">add</mat-icon>
+      </button>
+    </div>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let distribution of distributions; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveDistribution(distribution, i)"
+      >
+        {{ distribution.name }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <app-distribution-details
+      [currentDistribution]="currentDistribution"
+    ></app-distribution-details>
+    <div></div>
+  </div>
+</div>

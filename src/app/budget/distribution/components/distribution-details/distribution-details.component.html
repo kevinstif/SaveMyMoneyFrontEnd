@@ -1,0 +1,43 @@
+<div>
+  <mat-card class="card bg-green">
+    <h4 class="pt-4 pb-2 px-4">Details</h4> 
+    <mat-divider></mat-divider>
+    <mat-card-title-group class="py-2 px-4">
+      <mat-card-title>
+        <h5>Name</h5>
+      </mat-card-title>
+      <span>{{currentDistribution.name}}</span>
+    </mat-card-title-group>
+    <mat-divider></mat-divider>
+    <mat-card-subtitle class="py-2 px-4">
+      Tags List:
+    </mat-card-subtitle>
+    <mat-card-content>
+      <ul class="row">
+        <li class="list-style-erase card-tag col-lg-6" col-xs-12 *ngFor="let tag of currentDistribution.tags">
+          <mat-card class="p-2 m-2 bg-gold">
+            <mat-card-title-group>
+              <mat-card-title>
+                <h5>Name</h5>
+              </mat-card-title>
+              <span>{{ tag.name }}</span>
+            </mat-card-title-group>
+            <mat-divider></mat-divider>
+            <mat-card-title-group>
+              <mat-card-title>
+                <h5>Percent</h5>
+              </mat-card-title>
+              <span>{{ tag.percent }} %</span>
+            </mat-card-title-group>
+            <mat-card-subtitle>
+              <h5>Description</h5>
+            </mat-card-subtitle>
+            <mat-card-content>
+              <span>{{ tag.description }}</span>
+            </mat-card-content>
+          </mat-card>  
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card> 
+</div>

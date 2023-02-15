@@ -1,0 +1,37 @@
+.submit-form {
+    max-width: 400px;
+    margin: auto;
+}
+
+.bg-height{
+    height: 85vh;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 80vh; 
+}
+
+.bg-grey{
+    background-color: #AAA694;
+}
+
+.bg-red{
+    background-color: #E71D36;
+}
+
+.bg-green{
+    background-color: #20FC8F;
+}
+
+.font-light{
+    color: #FFFFFF;
+}
+
+.list-style-erase{
+    list-style: none;
+}
+
+.card-tag{
+    width: 200px;
+}

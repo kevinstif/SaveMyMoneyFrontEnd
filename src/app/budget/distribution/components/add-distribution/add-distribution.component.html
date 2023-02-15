@@ -1,0 +1,159 @@
+<div class="bg-height">
+  <div>
+    <div>
+      <div *ngIf="!submitted" class="row m-4">
+        <div class="col-md-6">
+          <mat-card class="bg-grey m-2 flex-container flex-center">
+            <mat-card-title class="m-3"> New Distribution </mat-card-title>
+            <mat-card-content>
+              <mat-form-field
+                hintLabel="Max 10 characters"
+                appearance="outline"
+                [color]="'primary'"
+              >
+                <mat-label>Name</mat-label>
+                <input
+                  matInput
+                  #input
+                  maxlength="10"
+                  placeholder="Default"
+                  required
+                  [(ngModel)]="distribution.name"
+                />
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint align="end">{{ input.value.length }}/10</mat-hint>
+              </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions align="end">
+              <button
+                (click)="saveDistribution()"
+                mat-raised-button
+                [color]="'primary'"
+              >
+                Submit
+              </button>
+            </mat-card-actions>
+          </mat-card>
+          <!--Todo move Add Tag another component-->
+          <mat-card class="bg-grey m-2">
+            <mat-card-title class="m-3"> Add Tag </mat-card-title>
+            <mat-card-content>
+              <mat-form-field
+                class="m-2"
+                hintLabel="Max 10 characters"
+                appearance="outline"
+                [color]="'primary'"
+              >
+                <mat-label>Name</mat-label>
+                <input
+                  matInput
+                  maxlength="10"
+                  placeholder="name"
+                  required
+                  [(ngModel)]="tag.name"
+                />
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint align="end">{{ input.value.length }}/10</mat-hint>
+              </mat-form-field>
+
+              <mat-form-field
+                class="m-2"
+                hintLabel="Max 10 characters"
+                appearance="outline"
+                [color]="'primary'"
+              >
+                <mat-label>Description</mat-label>
+                <input
+                  matInput
+                  maxlength="10"
+                  placeholder="Description"
+                  required
+                  [(ngModel)]="tag.description"
+                />
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint align="end">{{ input.value.length }}/10</mat-hint>
+              </mat-form-field>
+              <mat-form-field
+                class="m-2"
+                hintLabel="Max 10 characters"
+                appearance="outline"
+                [color]="'primary'"
+              >
+                <mat-label>Percent</mat-label>
+                <input
+                  type="number"
+                  matInput
+                  maxlength="10"
+                  placeholder="Percent"
+                  required
+                  [(ngModel)]="tag.percent"
+                />
+                <span matTextSuffix>%</span>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint align="end">{{ input.value.length }}/10</mat-hint>
+              </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions align="end">
+              <button (click)="addTag()" mat-raised-button [color]="'primary'">
+                Add
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <!--Todo move TaskList another component-->
+        <div class="col-md-6">
+          <mat-card class="card bg-green">
+            <h4 class="pt-4 pb-2 px-4">Preview</h4>
+            <mat-divider></mat-divider>
+            <mat-card-title-group class="py-2 px-4">
+              <mat-card-title>
+                <h5>Name</h5>
+              </mat-card-title>
+              <span>{{ distribution.name }}</span>
+            </mat-card-title-group>
+            <mat-divider></mat-divider>
+            <mat-card-subtitle class="py-2 px-4">
+              Tags List:
+            </mat-card-subtitle>
+            <mat-card-content>
+              <ul class="row">
+                <li
+                  class="list-style-erase card-tag col-lg-6"
+                  col-xs-12
+                  *ngFor="let tag of tags"
+                >
+                  <mat-card class="p-2 m-2 bg-gold">
+                    <mat-card-title-group>
+                      <mat-card-title>
+                        <h5>Name</h5>
+                      </mat-card-title>
+                      <span>{{ tag.name }}</span>
+                    </mat-card-title-group>
+                    <mat-divider></mat-divider>
+                    <mat-card-title-group>
+                      <mat-card-title>
+                        <h5>Percent</h5>
+                      </mat-card-title>
+                      <span>{{ tag.percent }} %</span>
+                    </mat-card-title-group>
+                    <mat-card-subtitle>
+                      <h5>Description</h5>
+                    </mat-card-subtitle>
+                    <mat-card-content>
+                      <span>{{ tag.description }}</span>
+                    </mat-card-content>
+                  </mat-card>
+                </li>
+              </ul>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <div *ngIf="submitted">
+        <h4>Distribution was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newDistribution()">Add</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6"></div>
+</div>

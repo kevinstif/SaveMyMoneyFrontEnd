@@ -1,0 +1,20 @@
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-center{
+  align-items: center;
+}
+
+.font-light{
+  color: #FFFFFF;
+}
